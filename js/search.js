@@ -115,14 +115,29 @@ FB.login(function(response) {
 	console.log('You are logged in.'); 
 	console.log(response);
 	
-FB.api('/815157038515764','get',
-  {"fields":"albums,photos"},
-	function(response) {
-      console.log("photos is here");
-			console.log(response);
-				var htmlStr = response.albums;
-				$('#albums').html(htmlStr);
-				});
+
+	FB.api('/'+album.id+'/photos',  function(resp) {
+                //Log.info('Albums', resp);
+                var ul = document.getElementById('albums');
+                for (var i=0, l=resp.data.length; i<l; i++){
+                    var
+                        album = resp.data[i],
+                        li = document.createElement('li'),
+                        a = document.createElement('a');
+                    a.innerHTML = album.name;
+                    a.href = album.link;
+                    li.appendChild(a);
+                    ul.appendChild(li);
+	
+	
+	//FB.api('/815157038515764','get',
+  //{"fields":"albums,photos"},
+	//function(response) {
+     // console.log("photos is here");
+			//console.log(response);
+				//var htmlStr = response.albums;
+				//$('#albums').html(htmlStr);
+				//});
 	
 	FB.api('/me', function(response) { 
 	console.log(response); 
@@ -137,6 +152,9 @@ FB.api('/815157038515764','get',
 	});
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
+
+
+
 
   
 
