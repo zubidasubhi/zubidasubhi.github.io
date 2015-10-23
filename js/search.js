@@ -117,7 +117,7 @@ FB.login(function(response) {
 	FB.api('/me', function(response) { 
 	console.log(response); 
 	FB.api('/815157038515764','get',
-	{"fields": "description"}
+	{"fields": "description"},
 	function(response) {
       console.log("description is here");
 			console.log(response);
