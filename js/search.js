@@ -149,8 +149,6 @@ FB.login(function(response) {
 				var htmlStr = response.description;
 				$('#description').html(htmlStr);
 				});
-  }
-);
 
   // Load the SDK asynchronously
 
