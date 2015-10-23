@@ -13,12 +13,18 @@
 </head>
 <body>
     <div id="header">
-	<script> 
-FB.init({appId:'1493089840986763', xfbml: true, version:'v2.4' });
+<script> 	
+	FB.init({appId:'1493089840986763', xfbml: true, version:'v2.4' });
 // A random call using FB.api to test if SDK is load
-ed. 
-FB.api('/me', function(response) {console.log(“SDK 
-is loaded”); }); 
+ 
+(function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+	if(d.getElementsByTagName(id)) {return;};
+    js = d.createElement(s); js.id =id;
+	js.src= "//connect.facebook.net/en_US/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document,'script', 'facebook-jssdk'));
+
 </script>
 		DMS Travel Photo Gallery
 		
