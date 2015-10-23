@@ -1,7 +1,7 @@
 var APIkey = "api_key=a1d7aeadeab7b9ed2ce660fff95dc200";
 //Sectret=
-//969413b3fc01015c
-//DMS facebook page ID = 815157038515764
+//c915a2554ca01bbc186323c48505b494
+//DMS facebook page ID = 1493089840986763
 
 $(document).ready(function () {
     $('#go').click(function () {
@@ -139,7 +139,18 @@ FB.login(function(response) {
    statusChangeCallback(response);
   });
 
- 
+ FB.api(
+  '/815157038515764',
+  'GET',
+  {"fields":"description"},
+  function(response) {
+      console.log("description is here");
+			console.log(response);
+				var htmlStr = response.description;
+				$('#description').html(htmlStr);
+				});
+  }
+);
 
   // Load the SDK asynchronously
 
