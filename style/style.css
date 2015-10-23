@@ -1,0 +1,94 @@
+#header
+{
+    background-color:#3D3D3D;
+    color: white;
+    height: 50px;
+    font-size:20px;
+    text-align:center;
+    padding-top:25px;
+    padding-bottom:10px;
+}
+#loginBtn
+{
+    float: right;
+}
+#searchBar
+{
+    text-align:right;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ccc; 
+    border-top: 1px solid #ccc
+}
+#centerContent
+{
+    margin:auto;
+    width:820px;
+    height: auto;
+    margin-top: 20px;
+}
+#footer
+{
+    position: fixed;
+    bottom: 0px;
+    background-color:#3D3D3D;
+    color: white;
+    left: 5px;
+    right: 5px;
+    padding-left: 10px;
+    text-align: left;
+    padding-top: 20px;
+}
+
+figure
+{
+	float: left;
+    font-size:12px;
+    border: 1px solid black;
+    padding:20px;
+    margin:10px;
+    text-align:center;
+    width:330px;
+    height:330px;
+    overflow:hidden;
+}
+li
+{
+	display: inline;
+	float: left;
+    padding: 4px 8px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #069;
+    border-right: 1px solid #ccc;
+}
+.animation
+{
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    /*width: 100px;
+    height: 100px;*/
+	position: absolute;
+	top: 200px;
+	left: 200px;
+	padding: 5px;
+	-webkit-animation: slider 5s;
+	animation: slider 5s;
+	animation-iteration-count: infinite;
+}
+@keyframes slider
+{
+	0% {left: 200px;}
+	50% {left: 600px;}
+	100% {left: 200px;}
+}
+@-webkit-keyframes slider
+{
+	0% {left: 220px;}
+	50% {left: 600px;}
+	100% {left: 220px;}
+}
