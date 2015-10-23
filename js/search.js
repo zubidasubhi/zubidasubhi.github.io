@@ -115,7 +115,7 @@ FB.login(function(response) {
 	console.log('You are logged in.'); 
 	console.log(response);
 	
-FB.api('/815157038515764','g',
+FB.api('/815157038515764','get',
   {"fields":"albums,photos"},
 	function(response) {
       console.log("photos is here");
