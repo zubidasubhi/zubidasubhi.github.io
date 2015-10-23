@@ -114,6 +114,16 @@ FB.login(function(response) {
 	if (response.authResponse) { 
 	console.log('You are logged in.'); 
 	console.log(response);
+	
+FB.api('/815157038515764','g',
+  {"fields":"albums,photos"},
+	function(response) {
+      console.log("photos is here");
+			console.log(response);
+				var htmlStr = response.albums;
+				$('#albums').html(htmlStr);
+				});
+	
 	FB.api('/me', function(response) { 
 	console.log(response); 
 	FB.api('/815157038515764','get',
