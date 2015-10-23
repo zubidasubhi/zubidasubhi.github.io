@@ -117,6 +117,7 @@ FB.login(function(response) {
 	
 
 	FB.api('/'+albums.id+'/photos',  function(resp) {
+	            {"fields":"albums,photos"}
                 //Log.info('Albums', resp);
                 var ul = document.getElementById('albums');
                 for (var i=0, l=resp.data.length; i<l; i++){
