@@ -134,20 +134,7 @@ FB.login(function(response) {
   //
   // These three cases are handled in the callback function.
 
-  
- model.getToken = function(){
-if (model.access_token == "") {
 
-}
-if (model.access_token != ) {
-// access token is available
-return true;
-} else { // start user authentication
-window.location.replace('https://www.facebook.com/di
-alog/oauth?');
-return false;
-}
-}
   
   
  FB.getLoginStatus(function(response) {
