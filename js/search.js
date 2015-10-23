@@ -135,7 +135,7 @@ FB.login(function(response) {
   
   
   
-  FB.getLoginStatus(function(response) {
+ FB.getLoginStatus(function(response) {
    statusChangeCallback(response);
   });
 
