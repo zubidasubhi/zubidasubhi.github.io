@@ -130,7 +130,7 @@ FB.login(function(response) {
                     ul.appendChild(li);
 	        }
             });
-        };
+        
 	
 	//FB.api('/815157038515764','get',
   //{"fields":"albums,photos"},
