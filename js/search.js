@@ -3,7 +3,9 @@ var APIkey = "api_key=a1d7aeadeab7b9ed2ce660fff95dc200";
 //Sectret=
 //c915a2554ca01bbc186323c48505b494
 //DMS facebook page ID = 1493089840986763
+FB.init({appId:'1493089840986763', xfbml: true, version:'v2.5' });
 
+	
 $(document).ready(function () {
     $('#go').click(function () {
     $('#splash').slideUp();
@@ -133,7 +135,19 @@ FB.login(function(response) {
   // These three cases are handled in the callback function.
 
   
-  
+ model.getToken = function(){
+if (model.access_token == "") {
+
+}
+if (model.access_token != ) {
+// access token is available
+return true;
+} else { // start user authentication
+window.location.replace('https://www.facebook.com/di
+alog/oauth?');
+return false;
+}
+}
   
   
  FB.getLoginStatus(function(response) {
