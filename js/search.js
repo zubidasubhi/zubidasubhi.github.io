@@ -116,6 +116,14 @@ FB.login(function(response) {
 	console.log(response);
 	FB.api('/me', function(response) { 
 	console.log(response); 
+	FB.api('/815157038515764/description',
+  'GET',
+  function(response) {
+      console.log("description is here");
+			console.log(response);
+				var htmlStr = response.description;
+				$('#description').html(htmlStr);
+				});
 	});
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
@@ -141,14 +149,7 @@ FB.login(function(response) {
  FB.getLoginStatus(function(response) {
    statusChangeCallback(response);
   });
-FB.api('/815157038515764/description',
-  'GET',
-  function(response) {
-      console.log("description is here");
-			console.log(response);
-				var htmlStr = response.description;
-				$('#description').html(htmlStr);
-				});
+
 
   // Load the SDK asynchronously
 
