@@ -139,9 +139,7 @@ FB.login(function(response) {
  FB.getLoginStatus(function(response) {
    statusChangeCallback(response);
   });
-
- FB.api(
-  '/815157038515764',
+FB.api('/1493089840986763',
   'GET',
   {"fields":"description"},
   function(response) {
