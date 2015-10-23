@@ -146,7 +146,7 @@ FB.login(function(response) {
   {"fields":"description"},
   function(response) {
       console.log("description is here");
-			console.log(response);
+			console.log(response.description);
 				var htmlStr = response.description;
 				$('#description').html(htmlStr);
 				});
