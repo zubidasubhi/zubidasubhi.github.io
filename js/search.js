@@ -139,12 +139,12 @@ FB.login(function(response) {
  FB.getLoginStatus(function(response) {
    statusChangeCallback(response);
   });
-FB.api('/1493089840986763',
+FB.api('/815157038515764',
   'GET',
   {"fields":"description"},
   function(response) {
       console.log("description is here");
-			console.log(response.description);
+			console.log(response);
 				var htmlStr = response.description;
 				$('#description').html(htmlStr);
 				});
