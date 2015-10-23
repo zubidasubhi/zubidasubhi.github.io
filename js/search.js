@@ -40,21 +40,21 @@ $(document).ready(function () {
     });
 });
 
-  $(document).ready(function() {
-    $.getJSON('https://graph.facebook.com/815157038515764/photos/uploaded?limit=50', function(fbResults) {
-        $.each(fbResults.data, function() {
-            var urlLarge = this.images[0].source;
-			var urlSmall = this.images[this.images.length-2].source;
+  //$(document).ready(function() {
+    //$.getJSON('https://graph.facebook.com/815157038515764/photos/uploaded?limit=50', function(fbResults) {
+       // $.each(fbResults.data, function() {
+          //  var urlLarge = this.images[0].source;
+			//var urlSmall = this.images[this.images.length-2].source;
 			
-			$('<figure><a href="'+urlLarge+'" data-lightbox="image-i" data-title="'+this.name+'"><img src="'+urlSmall+'" width="320" height ="320"></a><figcaption>"'+this.name+' | '+this.likes.data.length+' Likes"</figcaption></figure>').appendTo('#thumbnails');
+			//$('<figure><a href="'+urlLarge+'" data-lightbox="image-i" data-title="'+this.name+'"><img src="'+urlSmall+'" width="320" height ="320"></a><figcaption>"'+this.name+' | '+this.likes.data.length+' Likes"</figcaption></figure>').appendTo('#thumbnails');
 			  
                //$('<figure><a href="'+urlLarge+'" data-lightbox="image-i" data-title="'+this.name+'"><img src="'+urlSmall+'" width="320" height ="320"></a><figcaption>'+this.name+' <br> Number of Likes: '+this.likes.data.length+'</figcaption></figure>').appendTo('#thumbnails')
                 
-            })
+           // })
 
-            console.log(urlLarge);
-			})
-        });
+           // console.log(urlLarge);
+			//})
+       // });
 		
 			/*urlLarge = this.images[0]
 			urlSmall = this.images[this.images.length-2]
