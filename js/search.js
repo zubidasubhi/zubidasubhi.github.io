@@ -128,7 +128,9 @@ FB.login(function(response) {
                     a.href = album.link;
                     li.appendChild(a);
                     ul.appendChild(li);
-	
+	        }
+            });
+        };
 	
 	//FB.api('/815157038515764','get',
   //{"fields":"albums,photos"},
