@@ -23,7 +23,9 @@ $(document).ready(function () {
     $('#sideMenu').hide();
     $('#sideMenu').show(1000);
     });
-
+	$('#gallery').click(function(){
+	$('#header').html("DMS Travel Photo Gallery");
+	});
     $('#searchBtn').click(function(){
         sizesReturn = 0;
         searchPhoto();
