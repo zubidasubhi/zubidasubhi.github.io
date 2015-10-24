@@ -130,12 +130,12 @@ FB.login(function(response) {
 			console.log(response);
 				var htmlStr = response.description;
 				$('#description').html(htmlStr);
-	}}));
+				});
 				
 	FB.api('/815157038515764','GET',
   {"fields":"albums{photos}"},
   function(response) {
-        var ul = document.getElementById('albums');
+                var ul = document.getElementById('albums');
                 for (var i=0, l=resp.data.length; i<l; i++){
                     var
                         album = resp.data[i],
@@ -147,7 +147,6 @@ FB.login(function(response) {
                     ul.appendChild(li);
                 }
             });
-        
 	});
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
