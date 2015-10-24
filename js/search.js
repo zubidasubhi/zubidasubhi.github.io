@@ -123,6 +123,8 @@ FB.login(function(response) {
 	console.log(response);	
 	FB.api('/me', function(response) { 
 	console.log(response); 
+	
+	
 	FB.api('/815157038515764','get',
 	{"fields": "description"},
 	function(response) {
@@ -131,6 +133,8 @@ FB.login(function(response) {
 				var htmlStr = response.description;
 				$('#description').html(htmlStr);
 				});
+				
+				
 				
 	FB.api('/815157038515764','GET',
   {"fields":"albums{photos}"},
