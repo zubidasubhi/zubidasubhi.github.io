@@ -139,14 +139,6 @@ FB.login(function(response) {
 				var htmlStr = response.description;
 				$('#description').html(htmlStr);
 				});
-				
-	FB.api('/815157038515764','GET',
-  {"fields":"albums{photos}"},
-  function(response) {
-    console.log("photos is here");
-			console.log(response);
-				var htmlStr = response.albums{photos}};
-				$('#albums').html(htmlStr);
   }
 );
 	});
