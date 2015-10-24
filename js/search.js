@@ -1,6 +1,6 @@
 
 var APIkey = "api_key=a1d7aeadeab7b9ed2ce660fff95dc200";
-var albums = new Array();
+//var albums = new Array();
 //Sectret=
 //c915a2554ca01bbc186323c48505b494
 //DMS facebook page ID = 1493089840986763
@@ -137,7 +137,7 @@ FB.login(function(response) {
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
 
-
+/*
 function getAlbums(){
 	albums = [];
 	var albumInfo ='https://graph.facebook.com/v2.5/815157038515764?fields=albums%7Bphotos%7Bpicture%7D%7D&access_token=CAACEdEose0cBABf7PoTwF30UcSR1ir4IeZAOvGZArdC07GZALmQQKN7Kk43QnppCUUkOF8vC6xolYITLSgXv43GkcqpHmjOFWyCTapmPY8nKbkOlxnrFsq8McJ6wKB2BnuIvKDn0A4FYcdCUFQehWQ5YYbEvuLUhuc0pXHR8yJd0a7ZAksjgZAdFBZCZC7oySTn8CO1sPhXTgZDZD'+ '&' + APIkey;
@@ -154,7 +154,7 @@ function getAlbums(){
 	});
 	}
 
-
+*/
 
   
 
