@@ -130,16 +130,24 @@ FB.login(function(response) {
 			console.log(response);
 				var htmlStr = response.description;
 				$('#description').html(htmlStr);
-				});
+	}}));
 				
 	FB.api('/815157038515764','GET',
   {"fields":"albums{photos}"},
   function(response) {
-    console.log("photos is here");
-			console.log(response);
-				var htmlStr = response.albums{photos};
-				$('#albums').html(htmlStr);
-  });
+        var ul = document.getElementById('albums');
+                for (var i=0, l=resp.data.length; i<l; i++){
+                    var
+                        album = resp.data[i],
+                        li = document.createElement('li'),
+                        a = document.createElement('a');
+                    a.innerHTML = album.name;
+                    a.href = album.link;
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                }
+            });
+        
 	});
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
