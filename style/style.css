@@ -78,16 +78,17 @@ li
 	padding: 5px;
 	-webkit-animation: slider 5s infinite;
 	animation: slider 5s infinite;
-	
+	animation-iteration-count: infinite;
 }
 @keyframes slider
 {
-	transform: translateX(640px);
+	0% {left: 200px;}
+	50% {left: 600px;}
+	100% {left: 200px;}
 }
 @-webkit-keyframes slider
 {
-	to{
-		
-		-webkit-animation: translateX(640px)
-	}
+	0% {left: 220px;}
+	50% {left: 600px;}
+	100% {left: 220px;}
 }
