@@ -123,8 +123,6 @@ FB.login(function(response) {
 	console.log(response);	
 	FB.api('/me', function(response) { 
 	console.log(response); 
-	
-	
 	FB.api('/815157038515764','get',
 	{"fields": "description"},
 	function(response) {
@@ -134,24 +132,18 @@ FB.login(function(response) {
 				$('#description').html(htmlStr);
 				});
 				
-				
-				
-
+	FB.api('/815157038515764','GET',
+  {"fields":"albums{photos}"},
+  function(response) {
+    console.log("photos is here");
+			console.log(response);
+				var htmlStr = response.albums{photos}};
+				$('#albums').html(htmlStr);
+  }
+);
 	});
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
-
-
-
-
- window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1493089840986763', // App ID
-      channelUrl : 'https://www.facebook.com/DMS-Travel-815157038515764/', // Channel File
-      status     : true, // check login status
-      cookie     : true, // enable cookies to allow the server to access the session
-      xfbml      : true  // parse XFBML
-    });
 
 /*function getAlbum(){
 	albums = [];
@@ -224,4 +216,4 @@ function fetchLink(data){
     }
 }
 
-*/
+*
