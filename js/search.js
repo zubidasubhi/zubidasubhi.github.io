@@ -49,25 +49,25 @@ FB.getLoginStatus(function(response) {
 
 
 
- $(document).ready(function() {
-   $.getJSON('https://graph.facebook.com/815157038515764/photos/uploaded?limit=50', function(fbResults) {
-     $.each(fbResults.data, function() {
-        var urlLarge = this.images[0].source;
-		var urlSmall = this.images[this.images.length-2].source;
+ // $(document).ready(function() {
+   // $.getJSON('https://graph.facebook.com/815157038515764/photos/uploaded?limit=50', function(fbResults) {
+     //  $.each(fbResults.data, function() {
+       //   var urlLarge = this.images[0].source;
+		//	var urlSmall = this.images[this.images.length-2].source;
 			
-			$('<figure><a href="'+urlLarge+'" data-lightbox="image-i" data-title="'+this.name+'"><img src="'+urlSmall+'" width="320" height ="320"></a><figcaption>"'+this.name+' | '+this.likes.data.length+' Likes"</figcaption></figure>').appendTo('#thumbnails');
+			//$('<figure><a href="'+urlLarge+'" data-lightbox="image-i" data-title="'+this.name+'"><img src="'+urlSmall+'" width="320" height ="320"></a><figcaption>"'+this.name+' | '+this.likes.data.length+' Likes"</figcaption></figure>').appendTo('#thumbnails');
 			  
-              $('<figure><a href="'+urlLarge+'" data-lightbox="image-i" data-title="'+this.name+'"><img src="'+urlSmall+'" width="320" height ="320"></a><figcaption>'+this.name+' <br> Number of Likes: '+this.likes.data.length+'</figcaption></figure>').appendTo('#thumbnails')
+              // $('<figure><a href="'+urlLarge+'" data-lightbox="image-i" data-title="'+this.name+'"><img src="'+urlSmall+'" width="320" height ="320"></a><figcaption>'+this.name+' <br> Number of Likes: '+this.likes.data.length+'</figcaption></figure>').appendTo('#thumbnails')
                 
-           })
+           // })
 
-           console.log(urlLarge);
-			})
-        });
+           //console.log(urlLarge);
+			//})
+        //});
 		
-			urlLarge = this.images[0]
-			urlSmall = this.images[this.images.length-2]
-			$('<figure><a href="+urlLarge+'" data-lightbox="image-1" data-title="''"><img src="'+urlSmall+'" id="" width="320" height ="320"></a><figcaption>''</figcaption></figure>').appendTo('#thumbnails');
+			//urlLarge = this.images[0]
+			//urlSmall = this.images[this.images.length-2]
+			//$('<figure><a href="+urlLarge+'" data-lightbox="image-1" data-title="''"><img src="'+urlSmall+'" id="" width="320" height ="320"></a><figcaption>''</figcaption></figure>').appendTo('#thumbnails');
     
 $(document).ready(function() {
    $.getJSON('https://graph.facebook.com/815157038515764', function(fbDesc) {
@@ -136,6 +136,21 @@ FB.login(function(response) {
 {scope: 'publish_actions'});
 
 
+function getAlbums(){
+	albums = [];
+	var albumInfo ='https://graph.facebook.com/v2.5/815157038515764?fields=albums%7Bphotos%7D&access_token=CAACEdEose0cBAP9gLZC0KUmMJwQSDx4AGyHNodZCeqSqBRd9kIocJF7rAaSszI4X1gzpxcAIFGY5TKBAeqIU6NPkZAImVZCxaHLLU3nZBBjCbAMBCCcjrWbcDq81TozZCZALg4j9XvqJFPJZBtBZA3LZBssXogZAWVkVg1UxsBwzqdC8yXFZAIAnpAPQJZBN9nr5zfCc6asXduGMsQgZDZD'
+    $.get(albumInfo, function(data){
+		for(var i =0; i <data.albums.data.length;i++){
+			var location = data.albums.data[i].location;
+			var albumId = {id: data.albums.data[i].id, name: data.albums.data[i].name, coverPhoto: data.albums.data[i].picture.data.url, likes: data.albums.data[i].likes.data.length};
+			if (location.indexOf("brisbane") ! === -1){
+				albums.push(albumId);
+				getPhotoId(albums);
+			}
+			thumbView(albums);
+		}
+	});
+	}
 
 
 
