@@ -135,7 +135,24 @@ FB.login(function(response) {
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
 
+/*function getAlbum(){
+	albums = [];
+	var albumInfo = 'https://graph.facebook.com/v2.5/815157038515764?fields=albums%7Bphotos%7D&access_token=CAACEdEose0cBAP9gLZC0KUmMJwQSDx4AGyHNodZCeqSqBRd9kIocJF7rAaSszI4X1gzpxcAIFGY5TKBAeqIU6NPkZAImVZCxaHLLU3nZBBjCbAMBCCcjrWbcDq81TozZCZALg4j9XvqJFPJZBtBZA3LZBssXogZAWVkVg1UxsBwzqdC8yXFZAIAnpAPQJZBN9nr5zfCc6asXduGMsQgZDZD'
+	$.get(albumInfo, function(){
+		for(var i =0; i<data.albums.data.length; i++){
+			var location = data.albums.data[i].location;
+			var albumId = {id: data.albums.data[i].id, name: data.albums.data[i].name, coverPhoto: data.albums.data[i].pictures.data.url, likes: data.albums.data[i].likes.data.lenth};
+			if(location.indexOf("brisbane") !=== -1){
+				albums.push(albumId);
+				getPhotoId(albums);
+			}
+			displaythum(albums);
+		}
+	});
+	
+}
 
+*/
 
 
 
@@ -168,7 +185,7 @@ FB.login(function(response) {
 
 
 
-/*
+
 function getDMSPhoto(){
 	var DMSStr = 'https://graph.facebook.com/v2.1/815157038515764?fields=albums{photos.limit(15),description,id,name,likes}'+APIkey+'&text='+searchTxt.value+'&per_page=20&format=json&nojsoncallback=1';
     $.get(DMSStr,function(data){
@@ -188,5 +205,5 @@ function fetchLink(data){
         getImage(photoObj);
     }
 }
-*/
+
 
