@@ -187,7 +187,7 @@ FB.login(function(response) {
 
 
 function getDMSPhoto(){
-	var DMSStr = 'https://graph.facebook.com/v2.1/815157038515764?fields=albums{photos.limit(15),description,id,name,likes}'+APIkey+'&text='+searchTxt.value+'&per_page=20&format=json&nojsoncallback=1';
+	var DMSStr =  'https://graph.facebook.com/v2.5/815157038515764?fields=albums%7Bphotos%7D&access_token=CAACEdEose0cBAP9gLZC0KUmMJwQSDx4AGyHNodZCeqSqBRd9kIocJF7rAaSszI4X1gzpxcAIFGY5TKBAeqIU6NPkZAImVZCxaHLLU3nZBBjCbAMBCCcjrWbcDq81TozZCZALg4j9XvqJFPJZBtBZA3LZBssXogZAWVkVg1UxsBwzqdC8yXFZAIAnpAPQJZBN9nr5zfCc6asXduGMsQgZDZD'
     $.get(DMSStr,function(data){
         //console.log(data);
         fetchLink(data);
