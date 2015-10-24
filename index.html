@@ -8,6 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="js/lightbox/css/lightbox.css">
 	<script src="js/lightbox/js/lightbox.min.js"></script>
 	<script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script>
+	<script src="js/galleria/galleria-1.2.8.min.js"></script>
+    <script src="js/galleria/plugins/facebook/galleria.facebook.js"></script>
 	<title>Photo Album</title>
 </head>
 <body>
@@ -25,6 +27,15 @@ FB.init({appId:'1493089840986763', xfbml: true, version:'v2.5' });
 	}(document,'script', 'facebook-jssdk'));
 
 </script>
+<script>
+Galleria.loadTheme('js/galleria/themes/classic/galleria.classic.min.js');
+Galleria.run('#galleria', {
+ facebook: 'album:1493089840986763',
+ width: 745,
+ height: 550,
+ lightbox: true});
+</script>
+<div id="galleria"></div>
 
 		<div id="loginBtn" class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="true" data-auto-logout-link="true"></div>
         <div
@@ -45,7 +56,7 @@ FB.init({appId:'1493089840986763', xfbml: true, version:'v2.5' });
 	
                 <div id="status"></div>
 		<div id = "splash">Welcome to DMS Travel!<br> Please click to<button id ="go">Enter</button></div>
-		<div id ="ani" class="animation"><img src="photos/July 17 14 001.jpg" height="200" width="200"></div>
+		<div id ="ani" class="animation"><img src="photos/July 17 14 001.jpg" height="300" width="300"></div>
 		<!-- <img src="photos/July 17 14 001.jpg" height="300" width="300"> -->
 		<div id="thumbView" style="display:none">
 		<div id="searchBar">
