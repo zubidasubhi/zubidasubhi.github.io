@@ -137,10 +137,9 @@ FB.login(function(response) {
   function(response) {
     console.log("photos is here");
 			console.log(response);
-				var htmlStr = response.albums{photos}};
+				var htmlStr = response.albums{photos};
 				$('#albums').html(htmlStr);
-  }
-);
+  });
 	});
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
