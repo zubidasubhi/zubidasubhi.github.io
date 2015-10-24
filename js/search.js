@@ -41,6 +41,13 @@ $(document).ready(function () {
         });
     });
 });
+FB.getLoginStatus(function(response) {
+   statusChangeCallback(response);
+  });
+
+
+
+
 
   $(document).ready(function() {
     $.getJSON('https://graph.facebook.com/815157038515764/photos/uploaded?limit=50', function(fbResults) {
@@ -150,10 +157,7 @@ FB.login(function(response) {
 
   
   
- FB.getLoginStatus(function(response) {
-   statusChangeCallback(response);
-  });
-
+ 
 
   // Load the SDK asynchronously
 
