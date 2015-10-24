@@ -3,7 +3,6 @@ var APIkey = "api_key=a1d7aeadeab7b9ed2ce660fff95dc200";
 //Sectret=
 //c915a2554ca01bbc186323c48505b494
 //DMS facebook page ID = 1493089840986763
-FB.init({appId:'1493089840986763', xfbml: true, version:'v2.5' });
 
 	
 $(document).ready(function () {
@@ -28,7 +27,8 @@ $(document).ready(function () {
         sizesReturn = 0;
         searchPhoto();
     });
-    
+FB.init({appId:'1493089840986763', xfbml: true, version:'v2.5' });
+
     //kb event handling
     $(function printKey(event){
         var tf = document.getElementById("searchTxt");
