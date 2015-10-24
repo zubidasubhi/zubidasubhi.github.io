@@ -11,7 +11,33 @@
 	<title>Photo Album</title>
 </head>
 <body>
+<script> 
+var facebookappid = '1493089840986763';
+//this is the site owners facebook id. note she must make all her galleries and pictures public
+var userid = '815157038515764';
 
+//load the facebook SDK
+window.fbAsyncInit = function() {
+    FB.init({appId: facebookappid, status: true, cookie: true,
+             xfbml: true});
+  };
+  (function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+      '//connect.facebook.net/en_US/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+
+//get albums
+var albums;
+FB.api('/'+userid+'/albums/', 'get', function(response){
+    if (!response || response.error) {
+        albums = response.error;
+    } else {
+        albums = response;
+    }
+});
+</script> 
 <script> 	
 FB.init({appId:'1493089840986763', xfbml: true, version:'v2.5' });
 // A random call using FB.api to test if SDK is load
