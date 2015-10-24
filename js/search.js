@@ -143,7 +143,7 @@ function getAlbums(){
 		for(var i =0; i <data.albums.data.length;i++){
 			var location = data.albums.data[i].location;
 			var albumId = {id: data.albums.data[i].id, name: data.albums.data[i].name, coverPhoto: data.albums.data[i].picture.data.url, likes: data.albums.data[i].likes.data.length};
-			if (location.indexOf("Brisbane") !== -1){
+			if (data.location){
 				albums.push(albumId);
 				getPhotoId(albums);
 			}
