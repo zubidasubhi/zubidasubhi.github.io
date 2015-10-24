@@ -69,9 +69,9 @@ FB.getLoginStatus(function(response) {
 			//urlSmall = this.images[this.images.length-2]
 			//$('<figure><a href="+urlLarge+'" data-lightbox="image-1" data-title="''"><img src="'+urlSmall+'" id="" width="320" height ="320"></a><figcaption>''</figcaption></figure>').appendTo('#thumbnails');
     
-$(document).ready(function() {
-   $.getJSON('https://graph.facebook.com/815157038515764', function(fbDesc) {
-       $('#aboutDesc').append('<div><p>'+fbDesc.description+'</p></div>');
+//$(document).ready(function() {
+  // $.getJSON('https://graph.facebook.com/815157038515764', function(fbDesc) {
+    //   $('#aboutDesc').append('<div><p>'+fbDesc.description+'</p></div>');
 })
 }); 
 function myFunction(){
