@@ -72,8 +72,8 @@ FB.getLoginStatus(function(response) {
 //$(document).ready(function() {
    // $.getJSON('https://graph.facebook.com/815157038515764', function(fbDesc) {
        // $('#aboutDesc').append('<div><p>'+fbDesc.description+'</p></div>');
-})
-}); 
+//})
+//}); 
 function myFunction(){
     alert("This Feature Isn't Available");
 }
