@@ -132,7 +132,7 @@ FB.login(function(response) {
 				$('#description').html(htmlStr);
 				});
 				
-				
+	});			
 	 FB.api('/'+album.id+'/photos',  function(resp) {
                 //Log.info('Albums', resp);
                 var ul = document.getElementById('albums');
@@ -152,7 +152,7 @@ FB.login(function(response) {
 				
 				
 				
-	});
+	
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
 
