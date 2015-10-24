@@ -65,30 +65,21 @@ li
 }
 .animation
 {
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    /*width: 100px;
-    height: 100px;*/
+  
 	position: absolute;
-	top: 200px;
-	left: 200px;
-	padding: 5px;
-	-webkit-animation: slider 5s;
-	animation: slider 5s;
-	animation-iteration-count: infinite;
+	
+	-webkit-animation: moveRight 4s infinite;
+	animation: moveRight 4s infinite;
+	
 }
-@keyframes slider
+@keyframes moveRight
 {
-	0% {left: 200px;}
-	50% {left: 600px;}
-	100% {left: 200px;}
+	transform: translateX(640px);
 }
-@-webkit-keyframes slider
+@-webkit-keyframes moveRight
 {
-	0% {left: 220px;}
-	50% {left: 600px;}
-	100% {left: 220px;}
+	to{
+		
+		-webkit-animation: translateX(640px);
+	}
 }
