@@ -12,6 +12,19 @@
 	<title>DMS Gallery</title>
 </head>
 <body>
+<script> 	
+FB.init({appId:'1493089840986763', xfbml: true, version:'v2.5' });
+// A random call using FB.api to test if SDK is load
+ 
+(function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+	if(d.getElementsByTagName(id)) {return;};
+    js = d.createElement(s); js.id =id;
+	js.src= "//connect.facebook.net/en_US/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
+	}(document,'script', 'facebook-jssdk'));
+
+</script>
 	<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="true" data-auto-logout-link="true"></div>
 
   	 <div id="header">
