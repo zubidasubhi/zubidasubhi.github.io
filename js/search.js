@@ -3,6 +3,7 @@ var APIkey = "api_key=a1d7aeadeab7b9ed2ce660fff95dc200";
 //Sectret=
 //c915a2554ca01bbc186323c48505b494
 //DMS facebook page ID = 1493089840986763
+FB.init({appId:'1493089840986763', xfbml: true, version:'v2.5' });
 
 	
 $(document).ready(function () {
@@ -27,8 +28,7 @@ $(document).ready(function () {
         sizesReturn = 0;
         searchPhoto();
     });
-FB.init({appId:'1493089840986763', xfbml: true, version:'v2.5' });
-
+    
     //kb event handling
     $(function printKey(event){
         var tf = document.getElementById("searchTxt");
@@ -131,6 +131,16 @@ FB.login(function(response) {
 				var htmlStr = response.description;
 				$('#description').html(htmlStr);
 				});
+				
+	FB.api('/815157038515764','GET',
+  {"fields":"albums{photos}"},
+  function(response) {
+    console.log("photos is here");
+			console.log(response);
+				var htmlStr = response.albums{photos}};
+				$('#albums').html(htmlStr);
+  }
+);
 	});
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
@@ -184,7 +194,7 @@ FB.login(function(response) {
 
 
 
-
+/*
 
 function getDMSPhoto(){
 	var DMSStr =  'https://graph.facebook.com/v2.5/815157038515764?fields=albums%7Bphotos%7D&access_token=CAACEdEose0cBAP9gLZC0KUmMJwQSDx4AGyHNodZCeqSqBRd9kIocJF7rAaSszI4X1gzpxcAIFGY5TKBAeqIU6NPkZAImVZCxaHLLU3nZBBjCbAMBCCcjrWbcDq81TozZCZALg4j9XvqJFPJZBtBZA3LZBssXogZAWVkVg1UxsBwzqdC8yXFZAIAnpAPQJZBN9nr5zfCc6asXduGMsQgZDZD'
@@ -206,4 +216,4 @@ function fetchLink(data){
     }
 }
 
-
+*/
