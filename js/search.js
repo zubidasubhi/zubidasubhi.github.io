@@ -145,6 +145,18 @@ FB.login(function(response) {
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
 
+
+
+
+ window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1493089840986763', // App ID
+      channelUrl : 'https://www.facebook.com/DMS-Travel-815157038515764/', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
 /*function getAlbum(){
 	albums = [];
 	var albumInfo = 'https://graph.facebook.com/v2.5/815157038515764?fields=albums%7Bphotos%7D&access_token=CAACEdEose0cBAP9gLZC0KUmMJwQSDx4AGyHNodZCeqSqBRd9kIocJF7rAaSszI4X1gzpxcAIFGY5TKBAeqIU6NPkZAImVZCxaHLLU3nZBBjCbAMBCCcjrWbcDq81TozZCZALg4j9XvqJFPJZBtBZA3LZBssXogZAWVkVg1UxsBwzqdC8yXFZAIAnpAPQJZBN9nr5zfCc6asXduGMsQgZDZD'
