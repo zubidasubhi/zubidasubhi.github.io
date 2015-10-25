@@ -154,7 +154,7 @@ function getAlbum(){
 				}
 				for (var i = 0; i< cover.albums.data.length; i++){
 					for (var j = 0; j < covers.albums.data[i].photos.data.length; j++) {
-						coverImg.push(cover.albums.data[i].photos.data[j].images[0].source);
+						coverImg.push(covers.albums.data[i].photos.data[j].images[0].source);
 						console.log('covers', covers);
 					}
 				}
