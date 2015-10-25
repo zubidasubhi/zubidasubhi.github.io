@@ -140,14 +140,11 @@ FB.login(function(response) {
 {scope: 'publish_actions'});
 
 
-function getAlbum(){
-	FB.api('/815157038515764', 'GET', {"fields":"albums{location,photos{images}}"}, function(response) {
+FB.api('/815157038515764', 'GET', {"fields":"albums{location,photos{images}}"}, function(response) {
 		var names =[];
-		
+		var name =[];
 		var coverImg = [];
 		var locals =[];
-		var main = [];
-		
 		for(var i =0; 1< response.albums.data.length; i++){
 			names.push(response.albums.data[i]);
 		}
@@ -155,11 +152,11 @@ function getAlbum(){
 			coverImg.push(response.album.data[i].photos.data[0].images[0].source);
 		}
 		for(var i =0; i< response.albums.data.length; i++){
-			var country = response.albums.data[i].response.split(', ');
-			locals.push(response.albums.data[i].response);
+			var country = response.albums.data[i].location.split(', ');
+			locals.push(response.albums.data[i].location);
 		}
 		var htmlStr = '';
-		for (var i =0; i< response.length; i++) {
+		for (var i =0; i< names.length; i++) {
 			if(names[i].id != '823234927707975' || names[i].id != '819310544767080') {
 				htmlStr += "<figure id='"+names[i].id+"'><img src='"+coverImg[i]+"' alt='"+names[i].name+"' width='320' height='320'><figcaption>"+names[i].name+"</figcaption></figure>";
 			}
@@ -170,7 +167,6 @@ function getAlbum(){
 		console.log(coverImg);
 		console.log(locals);
 	});
-}
 
 
 
