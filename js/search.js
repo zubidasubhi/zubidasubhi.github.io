@@ -162,7 +162,7 @@ FB.api('/815157038515764', 'GET', {"fields":"albums{location,photos{images}}"}, 
 				htmlStr += "<figure id='"+names[i].id+"'><img src='"+coverImg[i]+"' alt='"+names[i].name+"' width='320' height='320'><figcaption>"+names[i].name+"</figcaption></figure>";
 			}
 		}
-		$('#albums').html(htmlStr);
+		
 		console.log(names);
 		console.log(name);
 		console.log(coverImg);
