@@ -139,6 +139,7 @@ FB.login(function(response) {
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
 
+
 function getAlbum(){
 	FB.api('/815157038515764', 'get', {"fields": "albums{location}"}, function(location){
 		FB.api('/815157038515764', 'get', {"fields": "albums{photos(images)}"}, function(covers){
@@ -167,10 +168,10 @@ function getAlbum(){
 				console.log(names);
 				console.log(name);
 				console.log(coverImg);
-				console.log(locals);
-			
+			console.log(locals);
+			}	
 		})
-	})
+	});
 	
 }
 
