@@ -137,8 +137,7 @@ FB.login(function(response) {
                 //Log.info('Albums', resp);
                 var ul = document.getElementById('albums');
                 for (var i=0, l=response.length; i<l; i++){
-                    var
-                        album = response.data[i],
+                    var album = response.data[i],
                         li = document.createElement('li'),
                         a = document.createElement('a');
                     a.innerHTML = album.name;
