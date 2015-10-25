@@ -160,7 +160,7 @@ function getAlbum(){
 				var htmlStr = '';
 				for (var i =0; i< names.length; i++){
 					if(names[i].id != '823234927707975' || names[i].id != '819310544767080'){
-						htmlStr += "<figure id='"+names[i].id+"'><img src= '"+coverImg[i]+"' alt='"names[i].name+"'width='320' height='320'><figcaption>"+names[i].name+"</figcaption></figure>";
+						htmlStr += "<figure id='"+names[i].id+"'><img src= '"+coverImg[i]+"' alt='"names[i].name+"' width='320' height='320'><figcaption>"+names[i].name+"</figcaption></figure>";
 					}
 				}
 				$('#albums').html(htmlStr);
