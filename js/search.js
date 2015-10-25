@@ -115,13 +115,13 @@ function getAlbum(){
 					names.push(response.albums.data[i]);
 					console.log('response', response);
 				}
-				for (var i = 0; i< covers.albums.data.length; i++){
+				/*for (var i = 0; i< covers.albums.data.length; i++){
 					for (var j = 0; j < covers.albums.data[i].photos.data.length; j++) {
 						coverImg.push(covers.albums.data[i].photos.data[j].images[0].source);
 						console.log('covers', covers);
 					}
 				}
-				/*for(var i =0; i< location.albums.data.length; i++){
+				*/for(var i =0; i< location.albums.data.length; i++){
 					var country = location.albums.data[i].location;
 					console.log('location', location);
 					locals.push(location.albums.data[i].location);
@@ -132,11 +132,11 @@ function getAlbum(){
 					if(names[i].id != '823234927707975' || names[i].id != '81931054476780'){
 					htmlStr += "<figure id='"+names[i].id+"'><img src='"+coverImg[i]+"' alt='"+names[i].name+"' width='320' height='320'><figcaption>"+names[i].name+"</figcaption></figure>";
 					}
-				}*/
-				//$('#albums').html(htmlStr);
+				}
+				$('#albums').html(htmlStr);
 				console.log('names', names);
 				console.log('coverImg',coverImg );
-				//console.log('locals',locals );
+				console.log('locals',locals );
 			});
 		});
 	});
