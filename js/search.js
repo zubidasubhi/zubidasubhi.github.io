@@ -143,10 +143,10 @@ FB.login(function(response) {
 function getAlbum(){
 	FB.api('/815157038515764', 'GET', {"fields":"albums{location,photos{images}}"}, function(response) {
 		var names =[];
-		var name =[];
+		
 		var coverImg = [];
 		var locals =[];
-		var main, var data = [];
+		
 		for(var i =0; 1< main.albums.data.length; i++){
 			names.push(main.albums.data[i]);
 		}
