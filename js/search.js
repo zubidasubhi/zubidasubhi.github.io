@@ -134,46 +134,47 @@ FB.login(function(response) {
 				});
 				
 	});			
-			
+	getAlbum();			
 	
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
 
-getAlbum();	
+
 function getAlbum(){
-FB.api('/815157038515764', 'GET', {"fields":"albums{location,photos{images}}"}, function(response) {
-		var names =[];
-		var name =[];
-		var coverImg = [];
-		var locals =[];
-		for(var i =0; 1< response.albums.data.length; i++){
-			names.push(response.albums.data[i]);
-			console.log('response', response);
-		}
-		for (var i = 0; i< response.albums.data.length; i++){
-			coverImg.push(response.albums.data[i].response.data[0].images[0].source);
-			console.log('response', response);
-		}
-		for(var i =0; i< response.albums.data.length; i++){
-			var country = response.albums.data[i].location.split(', ');
-			console.log('response', response);
-			locals.push(response.albums.data[i].location);
-			console.log('response', response);
-		}
-		var htmlStr = '';
-		for (var i =0; i< names.length; i++) {
-			if(names[i].id != '823234927707975' || names[i].id != '819310544767080') {
-				htmlStr += "<figure id='"+names[i].id+"'><img src='"+coverImg[i]+"' alt='"+names[i].name+"' width='320' height='320'><figcaption>"+names[i].name+"</figcaption></figure>";
-			    
-			}
+	FB.api('/815157038515764', 'get', {"fields": "albums{location}"}, function(location){
+		FB.api('/815157038515764', 'get', {"fields": "albums{photos(images)}"}, function(covers){
+			FB.api('/815157038515764', 'get', {"fields": "albums"}, function(response){
+				var names =[];
+				var coverImg = [];
+				var locals =[];
+				
+				for(var i =0; 1< response.albums.data.length; i++){
+					names.push(response.albums.data[i]);
+					console.log('response', response);
+				}
+				for (var i = 0; i< cover.albums.data.length; i++){
+					coverImg.push(covers.album.data[i].photos.data[0].images[0].source);
+					console.log('covers', covers);
+				}
+				for(var i =0; i< location.albums.data.length; i++){
+					var country = location.albums.data[i].location;
+					console.log('location', location);
+					locals.push(location.albums.data[i].location);
+					console.log('location2', location);
+				}
+				var htmlStr = '';
+				for (var i =0; i< names.length; i++){
+					if(names[i].id != '823234927707975' || names[i].id != '81931054476780'){
+						htmlStr += "<figure id='"+names[i].id+"'><img src= '"+coverImg[i]+"' alt='"names[i].name+"' width='320' height='320'><figcaption>"+names[i].name+"</figcaption></figure>";
+					}
+				}
+				$('#albums').html(htmlStr);
+				console.log('names', names);
+				console.log('coverImg',coverImg );
+				console.log('locals',locals );
 			
-		}
-		
-		console.log('response', names);
-		console.log('response',name);
-		console.log('response',coverImg);
-		console.log('response',locals);
-		console.log('response',response);
+			});
+		});
 	});
 }
 
