@@ -121,12 +121,12 @@ function getAlbum(){
 						console.log('covers', covers);
 					}
 				}
-				*/for(var i =0; i< location.albums.data.length; i++){
+				for(var i =0; i< location.albums.data.length; i++){
 					var country = location.albums.data[i].location;
 					console.log('location', location);
 					locals.push(location.albums.data[i].location);
 					console.log('location2', location);
-				}
+				}*/
 				var htmlStr = '';
 				for (var i =0; i< names.length; i++){
 					if(names[i].id != '823234927707975' || names[i].id != '81931054476780'){
