@@ -166,6 +166,7 @@ FB.api('/815157038515764', 'GET', {"fields":"albums{location,photos{images}}"}, 
 		console.log(name);
 		console.log(coverImg);
 		console.log(locals);
+		console.log(response);
 	});
 
 
