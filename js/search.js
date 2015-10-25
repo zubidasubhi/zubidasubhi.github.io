@@ -7,7 +7,7 @@ FB.init({appId:'1493089840986763', xfbml: true, version:'v2.5' });
 
 	
 $(document).ready(function () {
-	
+	getAlbum();
     $('#go').click(function () {
     $('#splash').slideUp();
     $('#thumbView').slideDown(3000);
