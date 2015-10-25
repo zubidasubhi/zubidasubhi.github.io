@@ -4,10 +4,10 @@ var APIkey = "api_key=a1d7aeadeab7b9ed2ce660fff95dc200";
 //c915a2554ca01bbc186323c48505b494
 //DMS facebook page ID = 1493089840986763
 FB.init({appId:'1493089840986763', xfbml: true, version:'v2.5' });
-
+getAlbum();
 	
 $(document).ready(function () {
-	getAlbum();
+	
     $('#go').click(function () {
     $('#splash').slideUp();
     $('#thumbView').slideDown(3000);
