@@ -148,26 +148,32 @@ FB.api('/815157038515764', 'GET', {"fields":"albums{location,photos{images}}"}, 
 		var locals =[];
 		for(var i =0; 1< response.albums.data.length; i++){
 			names.push(response.albums.data[i]);
+			console.log('response', response);
 		}
 		for (var i = 0; i< response.albums.data.length; i++){
 			coverImg.push(response.albums.data[i].response.data[0].images[0].source);
+			console.log('response', response);
 		}
 		for(var i =0; i< response.albums.data.length; i++){
 			var country = response.albums.data[i].location.split(', ');
+			console.log('response', response);
 			locals.push(response.albums.data[i].location);
+			console.log('response', response);
 		}
 		var htmlStr = '';
 		for (var i =0; i< names.length; i++) {
 			if(names[i].id != '823234927707975' || names[i].id != '819310544767080') {
 				htmlStr += "<figure id='"+names[i].id+"'><img src='"+coverImg[i]+"' alt='"+names[i].name+"' width='320' height='320'><figcaption>"+names[i].name+"</figcaption></figure>";
+			    
 			}
+			
 		}
 		
-		console.log(names);
-		console.log(name);
-		console.log(coverImg);
-		console.log(locals);
-		console.log(response);
+		console.log('response', names);
+		console.log('response',name);
+		console.log('response',coverImg);
+		console.log('response',locals);
+		console.log('response',response);
 	});
 }
 
