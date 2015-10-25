@@ -153,7 +153,7 @@ function getAlbum(){
 					console.log('response', response);
 				}
 				for (var i = 0; i< cover.albums.data.length; i++){
-					for (var j = 0; j < cover.albums.data[i].photos.data.length; j++) {
+					for (var j = 0; j < covers.albums.data[i].photos.data.length; j++) {
 						coverImg.push(cover.albums.data[i].photos.data[j].images[0].source);
 						console.log('covers', covers);
 					}
