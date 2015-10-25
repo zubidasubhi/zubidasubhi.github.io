@@ -165,6 +165,7 @@ function getAlbum(){
 				}
 				$('#albums').html(htmlStr);
 				console.log(names);
+				console.log(name);
 				console.log(coverImg);
 				console.log(locals);
 			
