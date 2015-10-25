@@ -1,4 +1,3 @@
-
 var APIkey = "api_key=a1d7aeadeab7b9ed2ce660fff95dc200";
 //Sectret=
 //c915a2554ca01bbc186323c48505b494
@@ -42,49 +41,13 @@ $(document).ready(function () {
         });
     });
 });
-FB.getLoginStatus(function(response) {
-   statusChangeCallback(response);
-  });
 
-
-
-
-
- // $(document).ready(function() {
-   // $.getJSON('https://graph.facebook.com/815157038515764/photos/uploaded?limit=50', function(fbResults) {
-     //  $.each(fbResults.data, function() {
-       //   var urlLarge = this.images[0].source;
-		//	var urlSmall = this.images[this.images.length-2].source;
-			
-			//$('<figure><a href="'+urlLarge+'" data-lightbox="image-i" data-title="'+this.name+'"><img src="'+urlSmall+'" width="320" height ="320"></a><figcaption>"'+this.name+' | '+this.likes.data.length+' Likes"</figcaption></figure>').appendTo('#thumbnails');
-			  
-              // $('<figure><a href="'+urlLarge+'" data-lightbox="image-i" data-title="'+this.name+'"><img src="'+urlSmall+'" width="320" height ="320"></a><figcaption>'+this.name+' <br> Number of Likes: '+this.likes.data.length+'</figcaption></figure>').appendTo('#thumbnails')
-                
-           // })
-
-           //console.log(urlLarge);
-			//})
-        //});
-		
-			//urlLarge = this.images[0]
-			//urlSmall = this.images[this.images.length-2]
-			//$('<figure><a href="+urlLarge+'" data-lightbox="image-1" data-title="''"><img src="'+urlSmall+'" id="" width="320" height ="320"></a><figcaption>''</figcaption></figure>').appendTo('#thumbnails');
-    
-//$(document).ready(function() {
-   // $.getJSON('https://graph.facebook.com/815157038515764', function(fbDesc) {
-       // $('#aboutDesc').append('<div><p>'+fbDesc.description+'</p></div>');
-//})
-//}); 
+ 
 function myFunction(){
     alert("This Feature Isn't Available");
 }
 
-//function getDesc(){
-	//var descStr = 'https://graph.facebook.com/v2.1/815157038515764?fields=description' + '&' + 'CAACEdEose0cBAFZCRJx10etgRBcmRScWYP2VxQpbLl0Oqu2v2ifdPQ70Afo0FbdgAZAlbtWq2jBdTZCMSaVUJgCQocKyLz8JFEFif7MAJDV1ZCkIZCwZC6M6DDhevkDSFZAwP4Ych1qdBlGLMF5eREOIuJy1PMEc8P6PKMC8cDJMdZBFAlig0CkAivpxv9OCkUnaxpaBJaZCKaQZDZD';
-	//$.get(descStr, function(descData){
-		//console.log(descData);
-	//});
-//}
+
 
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
@@ -139,7 +102,7 @@ FB.login(function(response) {
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
 
-
+//getting all the pictures from the album in DMS by using the Graph Api
 function getAlbum(){
 	FB.api('/815157038515764', 'get', {"fields": "albums{location}"}, function(location){
 		FB.api('/815157038515764', 'get', {"fields": "albums{photos(images)}"}, function(covers){
@@ -152,7 +115,7 @@ function getAlbum(){
 					names.push(response.albums.data[i]);
 					console.log('response', response);
 				}
-				for (var i = 0; i< covers.albums.data.length; i++){
+				/*for (var i = 0; i< covers.albums.data.length; i++){
 					for (var j = 0; j < covers.albums.data[i].photos.data.length; j++) {
 						//coverImg.push(covers.albums.data[i].photos.data[j].images[0].source);
 						console.log('covers', covers);
@@ -169,11 +132,11 @@ function getAlbum(){
 					if(names[i].id != '823234927707975' || names[i].id != '81931054476780'){
 					htmlStr += "<figure id='"+names[i].id+"'><img src='"+coverImg[i]+"' alt='"+names[i].name+"' width='320' height='320'><figcaption>"+names[i].name+"</figcaption></figure>";
 					}
-				}
-				$('#albums').html(htmlStr);
+				}*/
+				//$('#albums').html(htmlStr);
 				console.log('names', names);
-				console.log('coverImg',coverImg );
-				console.log('locals',locals );
+				//console.log('coverImg',coverImg );
+				//console.log('locals',locals );
 			});
 		});
 	});
@@ -196,40 +159,6 @@ function getAlbum(){
   //
   // These three cases are handled in the callback function.
 
-  
-
-  
-  
- 
-
-  // Load the SDK asynchronously
-
-
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-
-
-
-
-/*
-function getDMSPhoto(){
-	var DMSStr = 'https://graph.facebook.com/v2.1/815157038515764?fields=albums{photos.limit(15),description,id,name,likes}'+APIkey+'&text='+searchTxt.value+'&per_page=20&format=json&nojsoncallback=1';
-    $.get(DMSStr,function(data){
-        //console.log(data);
-        fetchLink(data);
-        });
-}
-
-function fetchLink(data){
-    photos = [];
-    numPhotos = data.photos.photo.length;
-    for(var i = 0; i < data.photos.photo.length; i++){
-        //console.log(data.photos.photo[i].id);
-        var photoObj = {id: data.photos.photo[i].id, description: data.photos.photo[i].title};
-        
-        photos.push(photoObj);
-        getImage(photoObj);
-    }
-}
-*/
-
+  FB.getLoginStatus(function(response) {
+   statusChangeCallback(response);
+  });
