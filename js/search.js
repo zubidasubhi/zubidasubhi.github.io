@@ -146,6 +146,7 @@ function getAlbum(){
 		var name =[];
 		var coverImg = [];
 		var locals =[];
+		var main = [];
 		for(var i =0; 1< main.albums.data.length; i++){
 			names.push(main.albums.data[i]);
 		}
