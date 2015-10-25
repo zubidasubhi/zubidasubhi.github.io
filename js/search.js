@@ -150,7 +150,7 @@ FB.api('/815157038515764', 'GET', {"fields":"albums{location,photos{images}}"}, 
 			names.push(response.albums.data[i]);
 		}
 		for (var i = 0; i< response.albums.data.length; i++){
-			coverImg.push(response.albums.data[i].photos.data[0].images[0].source);
+			coverImg.push(response.albums.data[i].response.data[0].images[0].source);
 		}
 		for(var i =0; i< response.albums.data.length; i++){
 			var country = response.albums.data[i].location.split(', ');
