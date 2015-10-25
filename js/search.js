@@ -7,6 +7,7 @@ FB.init({appId:'1493089840986763', xfbml: true, version:'v2.5' });
 
 	
 $(document).ready(function () {
+	getAlbum();
     $('#go').click(function () {
     $('#splash').slideUp();
     $('#thumbView').slideDown(3000);
@@ -133,27 +134,43 @@ FB.login(function(response) {
 				});
 				
 	});			
-	 FB.api('/'+album.id+'/photos',  function(response) {
-                //Log.info('Albums', resp);
-                var ul = document.getElementById('albums');
-                for (var i=0, l=response.length; i<l; i++){
-                    var album = response.data[i],
-                        li = document.createElement('li'),
-                        a = document.createElement('a');
-                    a.innerHTML = album.name;
-                    a.href = album.link;
-                    li.appendChild(a);
-                    ul.appendChild(li);
-                }
-            });			
-				
-				
-				
-				
 				
 	
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
+
+function getAlbum(){
+	FB.api('/815157038515764', 'get', {"fields": "albums{location}"}, function(location){
+		FB.api('/815157038515764', 'get', {"fields": "albums{photos(images)}"}, function(covers){
+			FB.api('/815157038515764', 'get', {"fields": "albums"}, function(main){
+				var names =[];
+				var coverImg = [];
+				var locals =[];
+				for(var i =0; 1< main.albums.data.length; i++){
+					names.push(main.albums.data[i]);
+				}
+				for (var i = 0; i< cover.albums.data.length; i++){
+					coverImg.push(covers.album.data[i].photos.data[0].images[0].source);
+				}
+				for(var i =0; i< location.albums.data.length; i++){
+					var country = location.albums.data[i].location.split(', ');
+					locals.push(location.albums.data[i].location);
+				}
+				var htmlStr = '';
+				for (var i =0; i< names.length; i++){
+					if(names[i].id != '823234927707975' || names[i].id != '819310544767080'){
+						htmlStr += "<figure id='"+names[i].id+"'><img src= '"+coverImg[i]+"'alt='"names[i].name+"'width='320' height='320'><figcaption>"+names[i].name+"</figcaption></figure>";
+					}
+				}
+				$('#albums').html(htmlStr);
+				console.log(names);
+				console.log(coverImg);
+				console.log(locals);
+			
+		})
+	})
+	
+}
 
 
 
