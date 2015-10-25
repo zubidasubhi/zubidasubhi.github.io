@@ -144,6 +144,7 @@ function getAlbum(){
 		FB.api('/815157038515764', 'get', {"fields": "albums{photos(images)}"}, function(covers){
 			FB.api('/815157038515764', 'get', {"fields": "albums"}, function(main){
 				var names =[];
+				var name =[];
 				var coverImg = [];
 				var locals =[];
 				for(var i =0; 1< main.albums.data.length; i++){
