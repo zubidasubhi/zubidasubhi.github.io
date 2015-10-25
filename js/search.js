@@ -153,8 +153,10 @@ function getAlbum(){
 					console.log('response', response);
 				}
 				for (var i = 0; i< cover.albums.data.length; i++){
-					coverImg.push(covers.album.data[i].photos.data[0].images[0].source);
-					console.log('covers', covers);
+					for (var j = 0; j < cover.albums.data[i].photos.data.length; j++) {
+						coverImg.push(covers.albums.data[i].photos.data[j].images[0].source);
+						console.log('covers', covers);
+					}
 				}
 				for(var i =0; i< location.albums.data.length; i++){
 					var country = location.albums.data[i].location;
@@ -172,7 +174,6 @@ function getAlbum(){
 				console.log('names', names);
 				console.log('coverImg',coverImg );
 				console.log('locals',locals );
-			
 			});
 		});
 	});
