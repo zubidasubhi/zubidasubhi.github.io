@@ -134,12 +134,12 @@ FB.login(function(response) {
 				});
 				
 	});			
-	getAlbum();			
+			
 	
 	} else { console.log('User cancelled login or did not fully authorize.'); }}, 
 {scope: 'publish_actions'});
 
-
+getAlbum();	
 function getAlbum(){
 FB.api('/815157038515764', 'GET', {"fields":"albums{location,photos{images}}"}, function(response) {
 		var names =[];
